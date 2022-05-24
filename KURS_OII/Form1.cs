@@ -145,7 +145,7 @@ namespace KURS_OII
                     text[text_number] += "P(H|E)=" + Convert.ToString(phe) + "\n";//выводим в трассировку
                     pneh = Pneh(i);//прощитываем P(неH|E)
                     text[text_number] += "P(неH|E)=" + Convert.ToString(pneh) + "\n";//выводим в трассировку
-                    pq = Pq(Convert.ToDouble(trackBar1.Value), -5, 5);//высчитываем P(Q)
+                    pq = Pq(Convert.ToDouble(trackBar1.Value), -3, 3);//высчитываем P(Q)
                     phq[i] = Convert.ToString(phe * pq + pneh * (1 - pq));//пересчитываем априорную вероятность
                     text[text_number] += "P(H|Q)=" + phq[i] + "\n\n";//выводим в трассировку           
                 }
@@ -166,6 +166,7 @@ namespace KURS_OII
             double peh = yes[i, q_number];  //вероятность, что произойдет E,если верно Н (условная)
             double peneh = no[i, q_number]; //вероятность, что произойдет E,если неверно Н (условная)
             double phe = (peh * ph) / ((peh * ph) + (peneh * (1 - ph)));    //апостериорная, вероятность, что произойдет Н если верно Е (услов-ная)
+            label1.Text = phe.ToString();
             return phe;
         }
 
