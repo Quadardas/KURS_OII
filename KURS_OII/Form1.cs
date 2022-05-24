@@ -168,6 +168,8 @@ namespace KURS_OII
             double phe = (peh * ph) / ((peh * ph) + (peneh * (1 - ph)));    //апостериорная, вероятность, что произойдет Н если верно Е (услов-ная)
             label1.Text = phe.ToString();
             return phe;
+
+           
         }
 
         private double Pneh(int i)
