@@ -43,6 +43,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.трассировкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редакторToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +78,7 @@
             // 
             this.richTextBox4.Location = new System.Drawing.Point(316, 164);
             this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(273, 42);
+            this.richTextBox4.Size = new System.Drawing.Size(295, 42);
             this.richTextBox4.TabIndex = 0;
             this.richTextBox4.Text = "";
             // 
@@ -89,16 +92,16 @@
             // 
             // richTextBox6
             // 
-            this.richTextBox6.Location = new System.Drawing.Point(655, 379);
+            this.richTextBox6.Location = new System.Drawing.Point(285, 343);
             this.richTextBox6.Name = "richTextBox6";
-            this.richTextBox6.Size = new System.Drawing.Size(112, 42);
+            this.richTextBox6.Size = new System.Drawing.Size(571, 153);
             this.richTextBox6.TabIndex = 1;
             this.richTextBox6.Text = "";
             // 
             // trackBar1
             // 
             this.trackBar1.LargeChange = 1;
-            this.trackBar1.Location = new System.Drawing.Point(328, 393);
+            this.trackBar1.Location = new System.Drawing.Point(316, 292);
             this.trackBar1.Maximum = 3;
             this.trackBar1.Minimum = -3;
             this.trackBar1.Name = "trackBar1";
@@ -107,7 +110,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(511, 379);
+            this.button1.Location = new System.Drawing.Point(490, 292);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
@@ -118,10 +121,12 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem});
+            this.файлToolStripMenuItem,
+            this.трассировкаToolStripMenuItem,
+            this.редакторToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1021, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(868, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -175,11 +180,36 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "label2";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(622, 292);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // трассировкаToolStripMenuItem
+            // 
+            this.трассировкаToolStripMenuItem.Name = "трассировкаToolStripMenuItem";
+            this.трассировкаToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
+            this.трассировкаToolStripMenuItem.Text = "Трассировка";
+            this.трассировкаToolStripMenuItem.Click += new System.EventHandler(this.трассировкаToolStripMenuItem_Click);
+            // 
+            // редакторToolStripMenuItem
+            // 
+            this.редакторToolStripMenuItem.Name = "редакторToolStripMenuItem";
+            this.редакторToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.редакторToolStripMenuItem.Text = "Редактор";
+            this.редакторToolStripMenuItem.Click += new System.EventHandler(this.редакторБазЗнанийToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 761);
+            this.ClientSize = new System.Drawing.Size(868, 499);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -204,13 +234,6 @@
         }
 
         #endregion
-
-        private RichTextBox richTextBox1;
-        private RichTextBox richTextBox2;
-        private RichTextBox richTextBox3;
-        private RichTextBox richTextBox4;
-        private RichTextBox richTextBox5;
-        private RichTextBox richTextBox6;
         private TrackBar trackBar1;
         private Button button1;
         private MenuStrip menuStrip1;
@@ -220,5 +243,14 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Button button2;
+        private ToolStripMenuItem трассировкаToolStripMenuItem;
+        private ToolStripMenuItem редакторToolStripMenuItem;
+        public RichTextBox richTextBox1;
+        public RichTextBox richTextBox2;
+        public RichTextBox richTextBox3;
+        public RichTextBox richTextBox4;
+        public RichTextBox richTextBox5;
+        public RichTextBox richTextBox6;
     }
 }

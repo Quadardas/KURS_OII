@@ -13,7 +13,7 @@ namespace KURS_OII
 {
     public partial class Form1 : Form
     {
-        string directoryname = null;
+       public string directoryname = null;
         int q_number = -1;
         double[,] yes = null;
         double[,] no = null;
@@ -26,7 +26,7 @@ namespace KURS_OII
         }
         private void редакторЅаз«нанийToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // new Form2().Show();
+           new Form2(this).Show();
         }
         public void dirname(string name)
         {
@@ -55,7 +55,7 @@ namespace KURS_OII
                 return;
             }
         }
-        private void загрузитьЅазу«нанийToolStripMenuItem_Click(object sender, EventArgs e)
+        public void load()
         {
             directoryname = null;   //им€ папки, в которой лежит Ѕ«
             Form3 f3 = new Form3(this, "¬ведите название папки, в которой хран€тс€ файлы базы знаний", "«агрузить", true); //описание действи€ и название кнопки в форме
@@ -63,6 +63,10 @@ namespace KURS_OII
             send_question();
             text = new string[richTextBox2.Lines.Count() * richTextBox3.Lines.Count()];
             read_yes_no_table(ref yes, ref no, richTextBox2.Lines.Count(), richTextBox3.Lines.Count());//получаем веро€тности P(E|H) и P(E|неH)
+        }
+        public void загрузитьЅазу«нанийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            load();
         }
         private int read_yes_no_table(ref double[,] yes, ref double[,] no, int question, int answer) //P(E|H) и P(E|неH)
         {
@@ -189,7 +193,7 @@ namespace KURS_OII
 
         private void button2_Click(object sender, EventArgs e)  //перезапустить
         {
-            richTextBox5.LoadFile(directoryname + @"\p.txt");   //измен€ем веро€тности на первоначальные
+            richTextBox5.Text = File.ReadAllText(directoryname + @"\p.txt");   //измен€ем веро€тности на первоначальные
             q_number = -1;
             send_question();    //отправили первый вопрос
             text = null;    //в трассировке ничего нет
@@ -199,8 +203,8 @@ namespace KURS_OII
 
         private void трассировкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // Form4 f = new Form4(text);
-           // f.Show();
+           Form4 f = new Form4(text);
+           f.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)
