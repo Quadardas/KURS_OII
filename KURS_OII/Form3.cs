@@ -21,11 +21,12 @@ namespace KURS_OII
             InitializeComponent();
             this.name = name;
             this.form1 = form1;
+            label1.Text = b;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
             form1.dirname(textBox1.Text.ToString());
             Console.WriteLine("1");
             

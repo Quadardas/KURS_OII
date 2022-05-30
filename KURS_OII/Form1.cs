@@ -58,7 +58,7 @@ namespace KURS_OII
         public void load()
         {
             directoryname = null;   //имя папки, в которой лежит БЗ
-            Form3 f3 = new Form3(this, "Введите название папки, в которой хранятся файлы базы знаний", "Загрузить", true); //описание действия и название кнопки в форме
+            Form3 f3 = new Form3(this, "Введите путь до папки, в которой\n хранятся файлы базы знаний", "Загрузить", true); //описание действия и название кнопки в форме
             f3.ShowDialog();    //вызвали форму
             send_question();
             text = new string[richTextBox2.Lines.Count() * richTextBox3.Lines.Count()];
@@ -235,5 +235,6 @@ namespace KURS_OII
            // new Form6().Show();
         }
 
+        
     }
 }
